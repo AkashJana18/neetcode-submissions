@@ -1,0 +1,21 @@
+impl Solution {
+    pub fn is_anagram(s: String, t: String) -> bool {
+        if s.len() != t.len() {
+            return false;
+        }
+        let mut arr = vec![0; 26];
+
+        for c in s.chars() {
+            arr[c as usize - 'a' as usize] += 1;
+        }
+        for c in t.chars() {
+            arr[c as usize - 'a' as usize] -= 1;
+    }
+    for i in arr {
+        if i != 0 {
+            return false;
+        }
+    }
+true
+    }
+}
